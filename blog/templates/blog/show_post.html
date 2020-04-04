@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% load i18n %}
+
+{% block title %}{{post.title}}{% endblock title %}
+
+
+{% block content %}
+
+	{% include "blog/top_menu.html" %}
+
+    {% include "blog/post.html" %}
+
+{% if not post.published_date %}
+<div class="u-letter-box-large">
+	<form action="{% url 'post_publish' %}" method="POST">
+		<input type="hidden" name="id" value="{{ post.pk }}">
+		{% csrf_token %}
+		<button class="button button-primary" id="savePreviewNote" type="submit">{% trans "Publish" %}</button>
+	</form>
+</div>
+
+{% endif %}
+
+{% endblock %}

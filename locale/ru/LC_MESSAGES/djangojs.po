@@ -1,0 +1,37 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-04 20:58+0300\n"
+"PO-Revision-Date: 2020-04-04 20:58+0300\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: static/scripts/main.js:29
+msgid "Something went wrong during upload"
+msgstr "Во время загрузки что-то пошло не так"
+
+#: static/scripts/main.js:30
+msgid "Here goes your new article..."
+msgstr "Начните новую статью..."
+
+#: static/vendor/@editorjs/editorjs/dist/editor.js:2
+msgid "typed_constructor"
+msgstr ""
+
+#: static/vendor/@editorjs/editorjs/dist/editor.js:2
+msgid "def_constructor"
+msgstr ""

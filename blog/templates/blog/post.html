@@ -1,0 +1,55 @@
+{% load static %}
+{% load i18n %}
+
+      <article class="blog-post">
+          <h1 class="post-title"><a href="{% url 'post_detail' postURL=post.url %}">{{ post.title }}</a></h1>
+
+          <div class="post-content">
+
+              {{ post.html|safe|linebreaksbr }}
+
+          </div>
+
+          <div class="post-meta">
+              <div class="post-date">
+                  {% if not post.published_date %}
+                  {% trans "not published, modified" %} {{ post.modified_date }}
+                  {% else %}
+                  {{ post.published_date }}
+                  {% endif %}
+              </div>
+
+              {% if user.is_authenticated %}
+              <div class="post-actions">
+                    {% if post.is_starred %}
+                  <a href="{% url 'post_star' postID=post.pk %}" title="{% trans 'Unstar' %}" class="post-action-btn">
+                      <i class="icofont-ui-rate-remove"></i>
+                  </a>
+                    {% else %}
+                  <a href="{% url 'post_star' postID=post.pk %}" title="{% trans 'Star' %}" class="post-action-btn">
+                      <i class="icofont-ui-rate-add"></i>
+                  </a>
+                    {% endif %}
+                  <a href="{% url 'post_edit' postURL=post.url %}" title="{% trans 'Edit' %}" class="post-action-btn">
+                      <i class="icofont-ui-edit"></i>
+                  </a>
+                  <a href="{% url 'post_remove' postID=post.pk %}" title="{% trans 'Trash' %}" class="post-action-btn">
+                      <i class="icofont-ui-delete"></i>
+                  </a>
+              </div>
+              {% endif %}
+          </div>
+
+          {% if post.getTags %}
+
+          <div class="post-tags">
+              <i class="icofont-tags"></i>
+              <span class="tags__list">
+                  {% for tag in post.getTags %}
+                  <a href="{% url 'tagged_posts' tag=tag.name %}">{{ tag }}</a>
+                  {% endfor %}
+              </span>
+          </div>
+
+          {% endif %}
+      </article>

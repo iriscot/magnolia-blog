@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% load tagging_tags %}
+{% load i18n %}
+
+
+{% block title %}{% trans "Tags" %}{% endblock title %}
+
+
+{% block content %}
+	{% include "blog/top_menu.html" %}
+
+
+{% tag_cloud_for_model blog.Post as tags with steps=3 min_count=1 distribution=log %}
+
+<h1 class="ui-header">{% trans "Tags" %}</h1>
+
+<div class="u-window-box-xlarge u-centered">
+	{% for tag in tags %}
+		<a href="{% url 'tagged_posts' tag=tag.name %}" style="font-size: {{ tag.font_size }}em">{{ tag.name }}</a>
+	{% endfor %}
+</div>
+
+
+
+
+{% endblock %}

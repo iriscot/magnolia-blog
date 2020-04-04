@@ -1,0 +1,96 @@
+{% load static %}
+{% load solo_tags %}
+{% load i18n %}
+{% get_solo 'blog.SiteSettings' as conf %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static '/styles/core.css' %}">
+
+
+    <script type="text/javascript" src="{% url 'javascript-catalog' %}"></script>
+    <script type="text/javascript" src="{% static '/vendor/jquery/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/scripts/main.js' %}"></script>
+    {% autoescape off %}
+    <title> {% block title %}
+        {{ page_title|default:"Magnolia" }}
+        {% endblock title %}</title>
+    {% endautoescape %}
+</head>
+
+<body>
+    {% csrf_token %}
+    <input type="file" id="fileUpload" style="display: none;">
+    <header class="master-header">
+        <div class="blog-cover">
+            <div class="blog-cover__bg" style="background-image: url('{{ conf.cover.url }}')"></div>
+            <!-- <div class="blog-cover__dim"></div> -->
+            {% if user.is_authenticated %}
+            <button class="button button-primary update-header-images" data-type="cover">{% trans "Change cover" %}</button>
+            {% endif %}
+        </div>
+        <div class="blog-undercover">
+            <div class="blog-avatar">
+                <div class="blog-avatar__image">
+                 <img src="{{ conf.avatar.url }}" alt="{{ conf.title }}">
+                 {% if user.is_authenticated %}
+                 <div class="update-header-images" data-type="avatar"><i class="icofont-camera"></i></div>
+                 {% endif %}
+                </div>
+            </div>
+            <div class="blog-meta">
+                <div class="blog-title"><a href="/">{{ conf.title }}</a></div>
+                <div class="blog-summary">{{ conf.description }}</div>
+            </div>
+        </div>
+
+    </header>
+
+    <main class="page">
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+    <footer class="master-footer">
+        <div class="copyleft">
+            <div class="blog-author">&copy; {{ conf.author }} {% now 'Y' %}</div>
+            <div class="blog-engine">{% trans "Engine" %}: Magnolia</div>
+            {% if not user.is_authenticated %}
+            <div class="blog-login"><a href="/admin">{% trans "Author login" %}</a></div>
+            {% else %}
+            <div class="blog-login"><a href="{% url 'settings' %}">{% trans "Settings" %}</a></div>
+            {% endif %}
+        </div>
+        <div class="social-media">
+            {% if conf.social_instagram %}
+            <a target="_blank" href="https://instagram.com/{{conf.social_instagram}}" class="blog-social"><i class="icofont-instagram"></i></a>
+            {% endif %}
+            {% if conf.social_twitter %}
+            <a target="_blank" href="https://twitter.com/{{conf.social_twitter}}" class="blog-social"><i class="icofont-twitter"></i></a>
+            {% endif %}
+            {% if conf.social_facebook %}
+            <a target="_blank" href="https://facebook.com/{{conf.social_facebook}}" class="blog-social"><i class="icofont-facebook"></i></a>
+            {% endif %}
+            {% if conf.social_youtube %}
+            <a target="_blank" href="https://youtube.com/{{conf.social_youtube}}" class="blog-social"><i class="icofont-youtube-play"></i></a>
+            {% endif %}
+            {% if conf.social_telegram %}
+            <a target="_blank" href="https://t.me/{{conf.social_telegram}}" class="blog-social"><i class="icofont-telegram"></i></a>
+            {% endif %}
+            {% if conf.social_vk %}
+            <a target="_blank" href="https://vk.com/{{conf.social_vk}}" class="blog-social"><i class="icofont-vk"></i></a>
+            {% endif %}
+            {% if conf.social_email %}
+            <a target="_blank" href="mailto:{{conf.social_email}}" class="blog-social"><i class="icofont-envelope"></i></a>
+            {% endif %}
+        </div>
+    </footer>
+
+</body>
+
+</html>

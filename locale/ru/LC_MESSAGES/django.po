@@ -1,0 +1,1606 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Magnolia\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-04 20:30+0300\n"
+"PO-Revision-Date: 2020-04-04 19:38+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#: blog/forms.py:19
+msgid "Blog title"
+msgstr "Название блога"
+
+#: blog/forms.py:20
+msgid "Blog description"
+msgstr "Описание блога"
+
+#: blog/forms.py:21
+msgid "Blog author"
+msgstr "Автор блога"
+
+#: blog/forms.py:23
+msgid "Instagram username"
+msgstr "Имя пользователя Instagram"
+
+#: blog/forms.py:24
+msgid "Twitter username"
+msgstr "Имя пользователя Twitter"
+
+#: blog/forms.py:25
+msgid "Facebook username"
+msgstr "Имя пользователя Facebook"
+
+#: blog/forms.py:26
+msgid "YouTube username"
+msgstr "Канал YouTube"
+
+#: blog/forms.py:27
+msgid "VK username"
+msgstr "Имя пользователя ВКонтакте"
+
+#: blog/forms.py:28
+msgid "Telegram username"
+msgstr "Имя пользователя Telegram"
+
+#: blog/forms.py:29
+msgid "E-Mail"
+msgstr ""
+
+#: blog/models.py:68
+msgid "My new blog"
+msgstr "Мой новый блог"
+
+#: blog/models.py:70
+msgid "Me"
+msgstr "Я"
+
+#: blog/models.py:115
+msgid "Site configuration"
+msgstr "Настройки сайта"
+
+#: blog/templates/blog/base.html:32
+msgid "Change cover"
+msgstr "Поменять обложку"
+
+#: blog/templates/blog/base.html:62
+msgid "Engine"
+msgstr "Движок"
+
+#: blog/templates/blog/base.html:64
+msgid "Author login"
+msgstr "Вход для автора"
+
+#: blog/templates/blog/base.html:66 blog/templates/blog/site_settings.html:5
+msgid "Settings"
+msgstr "Настройки"
+
+#: blog/templates/blog/editor.html:12
+msgid "New post"
+msgstr "Новый пост"
+
+#: blog/templates/blog/editor.html:17
+msgid "Comma or space separated tags"
+msgstr "Теги через запятую или пробел"
+
+#: blog/templates/blog/editor.html:20 blog/templates/blog/site_settings.html:27
+msgid "Save"
+msgstr "Сохранить"
+
+#: blog/templates/blog/editor.html:20
+msgid "Save & preview"
+msgstr "Сохранить и посмотреть"
+
+#: blog/templates/blog/errors/404.html:5
+msgid "not found"
+msgstr "не найдено"
+
+#: blog/templates/blog/errors/404.html:13
+msgid "Nothing found here"
+msgstr "Ничего не найдено"
+
+#: blog/templates/blog/post.html:16
+msgid "not published, modified"
+msgstr "не опубликовано, изменено"
+
+#: blog/templates/blog/post.html:25
+msgid "Unstar"
+msgstr "Убрать из избранного"
+
+#: blog/templates/blog/post.html:29
+msgid "Star"
+msgstr "Добавить в избранное"
+
+#: blog/templates/blog/post.html:33
+msgid "Edit"
+msgstr "Редактировать"
+
+#: blog/templates/blog/post.html:36
+msgid "Trash"
+msgstr "Удалить"
+
+#: blog/templates/blog/post_list.html:20 blog/templates/blog/post_list.html:22
+msgid "Later"
+msgstr "Позднее"
+
+#: blog/templates/blog/post_list.html:30
+msgid "No posts to show"
+msgstr "Нет постов"
+
+#: blog/templates/blog/post_list.html:44 blog/templates/blog/post_list.html:46
+msgid "Earlier"
+msgstr "Ранее"
+
+#: blog/templates/blog/show_post.html:18
+msgid "Publish"
+msgstr "Опубликовать"
+
+#: blog/templates/blog/site_settings.html:14
+msgid "Settings updated successfully"
+msgstr "Настройки успешно сохранены"
+
+#: blog/templates/blog/tags.html:6 blog/templates/blog/tags.html:15
+#: blog/templates/blog/top_menu.html:7
+msgid "Tags"
+msgstr "Теги"
+
+#: blog/templates/blog/top_menu.html:5
+msgid "New"
+msgstr "Создать"
+
+#: blog/templates/blog/top_menu.html:6 blog/views.py:48
+msgid "Drafts"
+msgstr "Черновики"
+
+#: blog/templates/blog/top_menu.html:8
+msgid "Featured"
+msgstr "Избранное"
+
+#: blog/templates/blog/top_menu.html:13 blog/templates/blog/top_menu.html:17
+msgid "Search this blog"
+msgstr "Искать в блоге"
+
+#: blog/views.py:32
+#, python-format
+msgid "Searching %s"
+msgstr "Поиск %s"
+
+#: blog/views.py:43
+msgid "Featured posts"
+msgstr "Избранные посты"
+
+#: blog/views.py:54
+#, python-format
+msgid "Tagged %s"
+msgstr "С тегом %s"
+
+#: blog/views.py:91 blog/views.py:97
+msgid "No title"
+msgstr "Без названия"
+
+#: pyenv/lib/python3.5/site-packages/django/contrib/messages/apps.py:7
+msgid "Messages"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/contrib/sitemaps/apps.py:7
+msgid "Site Maps"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/paginator.py:45
+msgid "That page number is not an integer"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/paginator.py:47
+msgid "That page number is less than 1"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/paginator.py:52
+msgid "That page contains no results"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:31
+msgid "Enter a valid value."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:102
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:658
+msgid "Enter a valid URL."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:154
+msgid "Enter a valid integer."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:165
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:239
+msgid ""
+"Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:246
+msgid ""
+"Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:255
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:275
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:260
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:276
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:270
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:274
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:304
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:310
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:342
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:351
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:361
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:376
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:395
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:290
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:325
+msgid "Enter a number."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:397
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:402
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:407
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:469
+#, python-format
+msgid ""
+"File extension '%(extension)s' is not allowed. Allowed extensions are: "
+"'%(allowed_extensions)s'."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/core/validators.py:521
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/base.py:1162
+#: pyenv/lib/python3.5/site-packages/django/forms/models.py:756
+msgid "and"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/base.py:1164
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:104
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:105
+msgid "This field cannot be null."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:106
+msgid "This field cannot be blank."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:107
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
+#. Eg: "Title must be unique for pub_date year"
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:111
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:128
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:905
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1772
+msgid "Integer"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:909
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1770
+#, python-format
+msgid "'%(value)s' value must be an integer."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:984
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1850
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:996
+#, python-format
+msgid "'%(value)s' value must be either True or False."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:997
+#, python-format
+msgid "'%(value)s' value must be either True, False, or None."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:999
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1040
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1104
+msgid "Comma-separated integers"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1153
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1155
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1298
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1158
+msgid "Date (without time)"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1296
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1300
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1304
+msgid "Date (with time)"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1452
+#, python-format
+msgid "'%(value)s' value must be a decimal number."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1454
+msgid "Decimal number"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1593
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1596
+msgid "Duration"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1646
+msgid "Email address"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1669
+msgid "File path"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1735
+#, python-format
+msgid "'%(value)s' value must be a float."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1737
+msgid "Floating point number"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1866
+msgid "IPv4 address"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1897
+msgid "IP address"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1977
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1978
+#, python-format
+msgid "'%(value)s' value must be either None, True or False."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:1980
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2015
+msgid "Positive integer"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2028
+msgid "Positive small integer"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2042
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2074
+msgid "Small integer"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2081
+msgid "Text"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2109
+#, python-format
+msgid ""
+"'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2111
+#, python-format
+msgid ""
+"'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2114
+msgid "Time"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2240
+msgid "URL"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2262
+msgid "Raw binary data"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2312
+#, python-format
+msgid "'%(value)s' is not a valid UUID."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/__init__.py:2314
+msgid "Universally unique identifier"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/files.py:221
+msgid "File"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/files.py:360
+msgid "Image"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/related.py:778
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/related.py:780
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/related.py:1007
+msgid "One-to-one relationship"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/related.py:1057
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/related.py:1058
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/db/models/fields/related.py:1100
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: pyenv/lib/python3.5/site-packages/django/forms/boundfield.py:146
+msgid ":?.!"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:53
+msgid "This field is required."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:245
+msgid "Enter a whole number."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:396
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:1126
+msgid "Enter a valid date."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:420
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:1127
+msgid "Enter a valid time."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:442
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:471
+msgid "Enter a valid duration."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:472
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:532
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:533
+msgid "No file was submitted."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:534
+msgid "The submitted file is empty."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:536
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:539
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:600
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:762
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:852
+#: pyenv/lib/python3.5/site-packages/django/forms/models.py:1270
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:853
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:968
+#: pyenv/lib/python3.5/site-packages/django/forms/models.py:1269
+msgid "Enter a list of values."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:969
+msgid "Enter a complete value."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/fields.py:1185
+msgid "Enter a valid UUID."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: pyenv/lib/python3.5/site-packages/django/forms/forms.py:86
+msgid ":"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/forms.py:212
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/formsets.py:91
+msgid "ManagementForm data is missing or has been tampered with"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/formsets.py:338
+#, python-format
+msgid "Please submit %d or fewer forms."
+msgid_plural "Please submit %d or fewer forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/formsets.py:345
+#, python-format
+msgid "Please submit %d or more forms."
+msgid_plural "Please submit %d or more forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/formsets.py:371
+#: pyenv/lib/python3.5/site-packages/django/forms/formsets.py:373
+msgid "Order"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/formsets.py:375
+msgid "Delete"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/models.py:751
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/models.py:755
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/models.py:761
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/models.py:770
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/models.py:1091
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/models.py:1158
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/models.py:1272
+#, python-format
+msgid "\"%(pk)s\" is not a valid value."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/utils.py:162
+#, python-format
+msgid ""
+"%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/widgets.py:395
+msgid "Clear"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/widgets.py:396
+msgid "Currently"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/widgets.py:397
+msgid "Change"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/widgets.py:709
+msgid "Unknown"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/widgets.py:710
+msgid "Yes"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/forms/widgets.py:711
+msgid "No"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/template/defaultfilters.py:788
+msgid "yes,no,maybe"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/template/defaultfilters.py:817
+#: pyenv/lib/python3.5/site-packages/django/template/defaultfilters.py:834
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/template/defaultfilters.py:836
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/template/defaultfilters.py:838
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/template/defaultfilters.py:840
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/template/defaultfilters.py:842
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/template/defaultfilters.py:844
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dateformat.py:62
+msgid "p.m."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dateformat.py:63
+msgid "a.m."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dateformat.py:68
+msgid "PM"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dateformat.py:69
+msgid "AM"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dateformat.py:150
+msgid "midnight"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dateformat.py:152
+msgid "noon"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:6
+msgid "Monday"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:6
+msgid "Tuesday"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:6
+msgid "Wednesday"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:6
+msgid "Thursday"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:6
+msgid "Friday"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:7
+msgid "Saturday"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:7
+msgid "Sunday"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:10
+msgid "Mon"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:10
+msgid "Tue"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:10
+msgid "Wed"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:10
+msgid "Thu"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:10
+msgid "Fri"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:11
+msgid "Sat"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:11
+msgid "Sun"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:14
+msgid "January"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:14
+msgid "February"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:14
+msgid "March"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:14
+msgid "April"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:14
+msgid "May"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:14
+msgid "June"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:15
+msgid "July"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:15
+msgid "August"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:15
+msgid "September"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:15
+msgid "October"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:15
+msgid "November"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:16
+msgid "December"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:19
+msgid "jan"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:19
+msgid "feb"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:19
+msgid "mar"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:19
+msgid "apr"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:19
+msgid "may"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:19
+msgid "jun"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:20
+msgid "jul"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:20
+msgid "aug"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:20
+msgid "sep"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:20
+msgid "oct"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:20
+msgid "nov"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:20
+msgid "dec"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:23
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:24
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:25
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:26
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:27
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:28
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:29
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:30
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:31
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:32
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:33
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:34
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:37
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:38
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:39
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:40
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:41
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:42
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:43
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:44
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:45
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:46
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:47
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/dates.py:48
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/text.py:67
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/text.py:233
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: pyenv/lib/python3.5/site-packages/django/utils/text.py:252
+#: pyenv/lib/python3.5/site-packages/django/utils/timesince.py:83
+msgid ", "
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/timesince.py:14
+#, python-format
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: pyenv/lib/python3.5/site-packages/django/utils/timesince.py:72
+msgid "0 minutes"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/csrf.py:110
+msgid "Forbidden"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/csrf.py:111
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/csrf.py:115
+msgid ""
+"You are seeing this message because this HTTPS site requires a 'Referer "
+"header' to be sent by your Web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/csrf.py:120
+msgid ""
+"If you have configured your browser to disable 'Referer' headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for 'same-"
+"origin' requests."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/csrf.py:124
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the 'Referrer-Policy: no-referrer' header, please remove them. The "
+"CSRF protection requires the 'Referer' header to do strict referer checking. "
+"If you're concerned about privacy, use alternatives like <a rel=\"noreferrer"
+"\" ...> for links to third-party sites."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/csrf.py:132
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/csrf.py:137
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for 'same-origin' requests."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/csrf.py:142
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/dates.py:41
+msgid "No year specified"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/dates.py:61
+#: pyenv/lib/python3.5/site-packages/django/views/generic/dates.py:111
+#: pyenv/lib/python3.5/site-packages/django/views/generic/dates.py:208
+msgid "Date out of range"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/dates.py:90
+msgid "No month specified"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/dates.py:142
+msgid "No day specified"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/dates.py:188
+msgid "No week specified"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/dates.py:338
+#: pyenv/lib/python3.5/site-packages/django/views/generic/dates.py:367
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/dates.py:589
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/dates.py:623
+#, python-format
+msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/detail.py:54
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/list.py:67
+msgid "Page is not 'last', nor can it be converted to an int."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/list.py:72
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/generic/list.py:154
+#, python-format
+msgid "Empty list and '%(class_name)s.allow_empty' is False."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/static.py:40
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/static.py:42
+#, python-format
+msgid "\"%(path)s\" does not exist"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/static.py:80
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/templates/default_urlconf.html:6
+msgid "Django: the Web framework for perfectionists with deadlines."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/templates/default_urlconf.html:345
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/templates/default_urlconf.html:367
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/templates/default_urlconf.html:368
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/templates/default_urlconf.html:383
+msgid "Django Documentation"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/templates/default_urlconf.html:384
+msgid "Topics, references, &amp; how-to's"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/templates/default_urlconf.html:395
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/templates/default_urlconf.html:396
+msgid "Get started with Django"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/templates/default_urlconf.html:407
+msgid "Django Community"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/django/views/templates/default_urlconf.html:408
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/solo/admin.py:53
+#, python-format
+msgid "%(obj)s was changed successfully."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/solo/admin.py:55
+msgid "You may edit it again below."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/solo/templates/admin/solo/change_form.html:7
+#: pyenv/lib/python3.5/site-packages/solo/templates/admin/solo/object_history.html:6
+msgid "Home"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/solo/templates/admin/solo/change_form.html:14
+#: pyenv/lib/python3.5/site-packages/solo/templates/admin/solo/object_history.html:9
+msgid "History"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/solo/templates/admin/solo/change_form.html:15
+msgid "View on site"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/solo/templatetags/solo_tags.py:22
+#, python-format
+msgid ""
+"Templatetag requires the model dotted path: 'app_label.ModelName'. Received "
+"'%s'."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/solo/templatetags/solo_tags.py:28
+#, python-format
+msgid ""
+"Could not get the model name '%(model)s' from the application named '%(app)s'"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/apps.py:14
+msgid "Tagging"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/fields.py:73
+#, python-format
+msgid "%s can only be set on instances."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/forms.py:21
+msgid "Multiple tags were given."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/forms.py:35
+#, python-format
+msgid "Each tag may be no more than %s characters long."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/models.py:65
+#, python-format
+msgid "No tags were given: \"%s\"."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/models.py:68
+#, python-format
+msgid "Multiple tags were given: \"%s\"."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/models.py:477
+msgid "name"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/models.py:484
+#: pyenv/lib/python3.5/site-packages/tagging/models.py:497
+msgid "tag"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/models.py:485
+msgid "tags"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/models.py:503
+msgid "content type"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/models.py:507
+msgid "object id"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/models.py:518
+msgid "tagged item"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/models.py:519
+msgid "tagged items"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:30
+#, python-format
+msgid "tags_for_model tag was given an invalid model: %s"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:47
+#, python-format
+msgid "tag_cloud_for_model tag was given an invalid model: %s"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:75
+#, python-format
+msgid "tagged_objects tag was given an invalid model: %s"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:111
+#, python-format
+msgid "%s tag requires either three or five arguments"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:114
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:175
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:244
+#, python-format
+msgid "second argument to %s tag must be 'as'"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:118
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:180
+#, python-format
+msgid "if given, fourth argument to %s tag must be 'with'"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:122
+#, python-format
+msgid "if given, fifth argument to %s tag must be 'counts'"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:171
+#, python-format
+msgid "%s tag requires either three or between five and seven arguments"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:190
+#, python-format
+msgid "%(tag)s tag's '%(option)s' option was not a valid integer: '%(value)s'"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:202
+#, python-format
+msgid "%(tag)s tag's '%(option)s' option was not a valid choice: '%(value)s'"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:210
+#, python-format
+msgid "%(tag)s tag was given an invalid option: '%(option)s'"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:217
+#, python-format
+msgid "%(tag)s tag was given a badly formatted option: '%(option)s'"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:241
+#, python-format
+msgid "%s tag requires exactly three arguments"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:269
+#, python-format
+msgid "%s tag requires exactly five arguments"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:272
+#, python-format
+msgid "second argument to %s tag must be 'in'"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/templatetags/tagging_tags.py:275
+#, python-format
+msgid "fourth argument to %s tag must be 'as'"
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/utils.py:196
+msgid ""
+"If a list or tuple of tags is provided, they must all be tag names, Tag "
+"objects or Tag ids."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/utils.py:199
+msgid "The tag input given was invalid."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/utils.py:247
+#, python-format
+msgid "Invalid distribution algorithm specified: %s."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/views.py:42
+msgid "TaggedObjectList must be called with a tag."
+msgstr ""
+
+#: pyenv/lib/python3.5/site-packages/tagging/views.py:46
+#, python-format
+msgid "No Tag found matching \"%s\"."
+msgstr ""
+
+#~ msgid "Star this post"
+#~ msgstr "Отметить"
+
+#~ msgid "Edit this post"
+#~ msgstr "Редактировать"
+
+#~ msgid "Trash this post"
+#~ msgstr "Удалить"

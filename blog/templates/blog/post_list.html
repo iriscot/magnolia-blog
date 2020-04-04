@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% load solo_tags %}
+{% load i18n %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% get_solo 'blog.SiteSettings' as conf %}
+
+{% block content %}
+	{% include "blog/top_menu.html" %}
+
+{% if not title == conf.title %}
+<h1 class="ui-header">{{title|safe}}</h1>
+{% endif %}
+
+{% if page.has_previous %}
+      <nav class="pageswitch">
+		{% if tag %}
+        <span><a href="{% url url_paged page=page.previous_page_number tag=tag %}">{% trans 'Later' %}</a></span>
+        {% else %}
+        <span><a href="{% url url_paged page=page.previous_page_number %}">{% trans 'Later' %}</a></span>
+        {% endif %}
+      </nav>
+{% endif %}
+
+{% if not page.object_list.count %}
+<div class="no-posts">
+	<img src="{% static 'images/mounth-sewn.svg' %}">
+	<div class="caption">{% trans 'No posts to show' %}</div>
+</div>
+{% endif %}
+
+{% for post in page.object_list %}
+      {% include "blog/post.html" %}
+      {% if not forloop.last %}
+      <hr class="article-divider">
+      {% endif %}
+{% endfor %}
+
+{% if page.has_next %}
+      <nav class="pageswitch">
+      	{% if tag %}
+        <span><a href="{% url url_paged page=page.next_page_number tag=tag %}">{% trans 'Earlier' %}</a></span>
+        {% else %}
+        <span><a href="{% url url_paged page=page.next_page_number %}">{% trans 'Earlier' %}</a></span>
+        {% endif %}
+      </nav>
+{% endif %}
+
+{% endblock %}

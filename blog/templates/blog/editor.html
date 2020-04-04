@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+{% include "blog/top_menu.html" %}
+
+<div class="post-edit u-letter-box-xlarge">
+
+    <input type="text" id="post-title" class="post-title-input" value="{% if post %}{{ post.title }}{% else %}{% trans 'New post' %}{% endif %}">
+
+    <div id="post-editor"></div>
+
+    <div class="u-letter-box-large">
+       <input class="u-fw" type="text" id="post-tags" placeholder="{% trans 'Comma or space separated tags' %}" value="{{ tags|safe }}">
+    </div>
+
+    <button class="button button-primary" id="savePreviewNote">{% if post %}{% trans "Save" %}{% else %}{% trans "Save & preview" %}{% endif %}</button>
+
+</div>
+
+
+<script type="text/javascript" src="{% static '/vendor/@editorjs/editorjs/dist/editor.js' %}"></script>
+<script type="text/javascript" src="{% static '/vendor/@editorjs/header/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static '/vendor/@editorjs/image/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static '/vendor/@editorjs/quote/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static '/vendor/@editorjs/list/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static '/vendor/@editorjs/embed/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static '/vendor/@editorjs/raw/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static '/vendor/@editorjs/checklist/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static '/vendor/@editorjs/delimiter/dist/bundle.js' %}"></script>
+
+<script type="text/javascript">
+{% if post %}
+  window.editor_source_post = {
+    'id': {{ post.id }},
+    'content': {{ post.content|safe }}
+  };
+  {% else %}
+  window.editor_source_post = {};
+  {% endif %}
+
+window.addEventListener("DOMContentLoaded", function(){
+ 
+  init_editor(editor_source_post);
+
+});
+    </script>
+{% endblock %}

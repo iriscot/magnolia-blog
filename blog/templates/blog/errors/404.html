@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% load i18n %}
+
+
+{% block title %}404 - {% trans "not found" %}{% endblock title %}
+
+
+{% block content %}
+	{% include "blog/top_menu.html" %}
+
+<div class="no-posts">
+	<img src="{% static 'images/mounth-sewn.svg' %}">
+	<div class="caption">{% trans "Nothing found here" %}</div>
+</div>
+
+
+
+{% endblock %}
