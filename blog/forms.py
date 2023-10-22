@@ -1,25 +1,22 @@
 from django import forms
 
-from .models import Post
-from .models import SiteSettings
+from .models import SiteSettings, Post
 
-from django.utils.translation import ugettext_lazy as _
-
+from django.utils.translation import gettext_lazy as _
 
 
 class SiteSettingsForm(forms.ModelForm):
 
+    class Meta:
+        model = SiteSettings
+        fields = ('title', 'description', 'author', 'social_instagram', 'social_twitter',
+                  'social_facebook', 'social_youtube', 'social_vk', 'social_telegram', 'social_email')
 
-	class Meta:
-		model = SiteSettings
-		fields = ('title', 'description', 'author', 'social_instagram', 'social_twitter', 'social_facebook', 'social_youtube', 'social_vk', 'social_telegram', 'social_email')
-
-
-		labels = {
+        labels = {
             "title": _("Blog title"),
             "description": _("Blog description"),
             "author": _("Blog author"),
-            
+
             "social_instagram": _("Instagram username"),
             "social_twitter": _("Twitter username"),
             "social_facebook": _("Facebook username"),
@@ -31,5 +28,12 @@ class SiteSettingsForm(forms.ModelForm):
 
 
 class UploadHeaderImageForm(forms.Form):
-      image = forms.ImageField()
-      image_type = forms.CharField(max_length=10)
+    image = forms.ImageField()
+    image_type = forms.CharField(max_length=10)
+
+
+class PostEditorForm(forms.ModelForm):
+
+    class Meta:
+        model = Post
+        fields = ('title', 'content', 'tags')

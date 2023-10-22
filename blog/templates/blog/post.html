@@ -40,13 +40,14 @@
               {% endif %}
           </div>
 
-          {% if post.getTags %}
+          {% if post.tags.all %}
+
 
           <div class="post-tags">
               <i class="icofont-tags"></i>
               <span class="tags__list">
-                  {% for tag in post.getTags %}
-                  <a href="{% url 'tagged_posts' tag=tag.name %}">{{ tag }}</a>
+                  {% for tag in post.tags.all %}
+                  <a href="{% url 'tagged_posts' tag_slug=tag.slug %}">{{ tag.name }}</a>
                   {% endfor %}
               </span>
           </div>

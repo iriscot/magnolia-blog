@@ -1,39 +1,37 @@
 from django.utils import timezone
 from .models import Post, SiteSettings
 from django.shortcuts import render, get_object_or_404, redirect
-from .forms import SiteSettingsForm, UploadHeaderImageForm
+from .forms import SiteSettingsForm, UploadHeaderImageForm, PostEditorForm
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
-from django.http import HttpResponseForbidden, HttpResponseNotFound, Http404, HttpResponse, JsonResponse
-from tagging.models import Tag, TaggedItem
+from django.http import HttpResponseForbidden, Http404, JsonResponse
+from taggit.models import Tag
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
 from django.core.paginator import Paginator, EmptyPage
 from django.core.files import File
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.utils.html import escape
 import urllib
-import os
 import operator
 import time
 from functools import reduce
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
-
-def post_list(request, page=1, query=False, type=False, tag=False):
+def post_list(request, page=1, query=False, type=False, tag_slug=False):
     site = SiteSettings.get_solo()
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+    posts = Post.objects.filter(
+        published_date__lte=timezone.now()).order_by('-published_date')
     page_title = site.title
     paged_url = 'posts_list_paged'
-    tag_name = ''
 
     if query:
         page_title = _('Searching %s') % '&laquo;'+escape(query)+'&raquo;'
         query_list = query.split()
         posts = posts.filter(
             reduce(operator.and_,
-                    (Q(title__contains=q) for q in query_list)) |
+                   (Q(title__contains=q) for q in query_list)) |
             reduce(operator.and_,
                    (Q(html__contains=q) for q in query_list))
         )
@@ -44,23 +42,29 @@ def post_list(request, page=1, query=False, type=False, tag=False):
         paged_url = 'posts_list_featured_paged'
 
     if (type == 'drafts'):
-        posts = Post.objects.filter(published_date=None).order_by('-created_date')
+        posts = Post.objects.filter(
+            published_date=None).order_by('-created_date')
         page_title = _('Drafts')
         paged_url = 'posts_list_drafts_paged'
 
-    if(tag):
-        rq_tag = Tag.objects.get(name=tag)
-        posts = TaggedItem.objects.get_by_model(Post, rq_tag).filter(published_date__lte=timezone.now()).order_by('-published_date')
-        page_title = _('Tagged %s') % '&laquo;'+rq_tag.name+'&raquo;'
+    if(tag_slug):
+        rq_tag = get_object_or_404(Tag, slug=tag_slug)
+        posts = Post.objects.filter(
+            tags__slug=tag_slug,
+            published_date__lte=timezone.now()).order_by('-published_date')
+        page_title = _('Tagged %s') % f'&laquo;{rq_tag.name}&raquo;'
         paged_url = 'tagged_posts_paged'
-        tag_name = rq_tag.name
 
     paginator = Paginator(posts, settings.POSTS_PER_PAGE)
     try:
         current_page = paginator.page(page)
     except EmptyPage:
         raise Http404
-    return render(request, 'blog/post_list.html', {'title': page_title, 'page': current_page, 'url_paged': paged_url, 'tag': tag_name})
+    return render(request, 'blog/post_list.html',
+                  {'title': page_title,
+                   'page': current_page,
+                   'url_paged': paged_url})
+
 
 def post_detail(request, postURL):
     post = get_object_or_404(Post, url=postURL)
@@ -68,36 +72,55 @@ def post_detail(request, postURL):
         raise Http404
     return render(request, 'blog/show_post.html', {'post': post})
 
+
 def tags_list(request):
-    return render(request, 'blog/tags.html')
+    # Retrieve tags annotated with the count of related posts
+    tags_with_post_count = Tag.objects.annotate(
+        num_posts=Count('taggit_taggeditem_items'))
+
+    # Order tags by the number of posts in descending order
+    ordered_tags = tags_with_post_count.order_by('-num_posts')
+    return render(request, 'blog/tags.html', {'tags': ordered_tags})
 
 
 @login_required(login_url='/admin/')
 def post_editor(request, postURL=None):
     if(postURL):
         post = get_object_or_404(Post, url=postURL)
-        return render(request, 'blog/editor.html', {'post': post, 'tags': post.getTags(True), 'title': post.title})
+        return render(request, 'blog/editor.html', {'post': post,
+                                                    'tags': post.tags.all(),
+                                                    'title': post.title})
     else:
-        return render(request, 'blog/editor.html', {'title': 'New post'})
+        return render(request, 'blog/editor.html', {'title': _('New post')})
 
 
 @login_required(login_url='/admin/')
 def post_manage(request):
-    if request.method == "POST":
+    if request.method != "POST":
+        raise Http404
 
-        if request.POST.get('id', False): # Post exists, edit it! 
-            post = get_object_or_404(Post, pk=request.POST.get('id'))
-            post.content = request.POST.get('content', '')
-            post.title = request.POST.get('title', _('No title'))
-            post.modified_date = timezone.now()
-            post.process().tag(request.POST.get('tags')).save();
-            return JsonResponse({'url': reverse('post_detail', args=[post.url])})
+    title = request.POST.get('title', _('No title')).strip()
+    if title == '':
+        title = _('No title')
 
-        else:  # Create a new post
-            newPost = Post.objects.create(author=request.user, title=request.POST.get('title', _('No title')), content=request.POST.get('content', ''))
-            newPost.modified_date = timezone.now()
-            newPost.process().tag(request.POST.get('tags')).save()
-            return JsonResponse({'url': reverse('post_detail', args=[newPost.url])})
+    if request.POST.get('id', False):  # Post exists, edit it!
+        post = get_object_or_404(Post, pk=request.POST.get('id'))
+
+    else:  # Create a new post
+        post = Post.objects.create(author=request.user)
+
+    form = PostEditorForm(request.POST, instance=post)
+    if not form.is_valid():
+        return HttpResponseForbidden('content misformed')
+
+    post = form.save(commit=False)
+    post.content = request.POST.get('content', '')
+    post.title = title
+    post.modified_date = timezone.now()
+    post.process().save()
+    form.save_m2m()
+
+    return JsonResponse({'url': reverse('post_detail', args=[post.url])})
 
 
 @login_required(login_url='/admin/')
@@ -105,8 +128,8 @@ def post_publish(request):
     if request.method == "POST":
         post = get_object_or_404(Post, pk=request.POST.get('id'))
         if post.author != request.user:
-            return HttpResponseForbidden() 
-        post.publish();
+            return HttpResponseForbidden()
+        post.publish()
         return redirect('post_detail', postURL=post.url)
 
 
@@ -115,17 +138,18 @@ def post_remove(request, postID):
     if request.method == "GET":
         post = get_object_or_404(Post, pk=postID)
         if post.author != request.user:
-            return HttpResponseForbidden() 
-        post.delete();
+            return HttpResponseForbidden()
+        post.delete()
         return redirect('post_list')
+
 
 @login_required(login_url='/admin/')
 def post_star(request, postID):
     if request.method == "GET":
         post = get_object_or_404(Post, pk=postID)
         if post.author != request.user:
-            return HttpResponseForbidden() 
-        post.toggleStar();
+            return HttpResponseForbidden()
+        post.toggleStar()
         return redirect('post_detail', postURL=post.url)
 
 
@@ -158,22 +182,19 @@ def upload_image_link(request):
 def upload_header_image(request):
     if request.method == 'POST':
         form = UploadHeaderImageForm(request.POST, request.FILES)
-        if form.is_valid():
-            site = SiteSettings.get_solo()
-            if request.POST.get('image_type') == 'cover':
-                # handle cover
-                site.cover = request.FILES['image']
-                site.save()
-            elif request.POST.get('image_type') == 'avatar':
-                # handle avatar
-                site.avatar = request.FILES['image']
-                site.save()
-                site.crop_avatar()
-            else:
-                return HttpResponseForbidden('method not allowed')
-            return JsonResponse({'success': 1})
-        else:
+        if not form.is_valid():
             return HttpResponseForbidden('this file type is not allowed')
+
+        site = SiteSettings.get_solo()
+        if request.POST.get('image_type') == 'avatar':
+            # handle avatar
+            site.avatar = request.FILES['image']
+            site.save()
+            site.crop_avatar()
+        else:
+            return HttpResponseForbidden('method not allowed')
+        return JsonResponse({'success': 1})
+
     return HttpResponseForbidden('allowed only via POST')
 
 
@@ -184,7 +205,8 @@ def blog_settings(request):
         form = SiteSettingsForm(request.POST, instance=site)
         if form.is_valid():
             form.save()
-            return render(request, 'blog/site_settings.html', {'form': form, 'is_saved': True})
+            return render(request, 'blog/site_settings.html',
+                          {'form': form, 'is_saved': True})
     else:
         form = SiteSettingsForm(instance=site)
         return render(request, 'blog/site_settings.html', {'form': form})

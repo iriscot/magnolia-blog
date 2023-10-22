@@ -14,7 +14,7 @@
     <div id="post-editor"></div>
 
     <div class="u-letter-box-large">
-       <input class="u-fw" type="text" id="post-tags" placeholder="{% trans 'Comma or space separated tags' %}" value="{{ tags|safe }}">
+       <input class="u-fw" type="text" id="post-tags" placeholder="{% trans 'Comma or space separated tags' %}" value="{% for tag in tags %}{{ tag.name }}{% if not forloop.last %}, {% endif %}{% endfor %}">
     </div>
 
     <button class="button button-primary" id="savePreviewNote">{% if post %}{% trans "Save" %}{% else %}{% trans "Save & preview" %}{% endif %}</button>

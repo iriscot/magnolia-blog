@@ -22,22 +22,16 @@
 </head>
 
 <body>
-    {% csrf_token %}
-    <input type="file" id="fileUpload" style="display: none;">
+
     <header class="master-header">
-        <div class="blog-cover">
-            <div class="blog-cover__bg" style="background-image: url('{{ conf.cover.url }}')"></div>
-            <!-- <div class="blog-cover__dim"></div> -->
-            {% if user.is_authenticated %}
-            <button class="button button-primary update-header-images" data-type="cover">{% trans "Change cover" %}</button>
-            {% endif %}
-        </div>
         <div class="blog-undercover">
             <div class="blog-avatar">
                 <div class="blog-avatar__image">
                  <img src="{{ conf.avatar.url }}" alt="{{ conf.title }}">
                  {% if user.is_authenticated %}
-                 <div class="update-header-images" data-type="avatar"><i class="icofont-camera"></i></div>
+                     {% csrf_token %}
+                        <input type="file" id="fileUpload" style="display: none;">
+                        <div class="update-header-images" data-type="avatar"><i class="icofont-camera"></i></div>
                  {% endif %}
                 </div>
             </div>

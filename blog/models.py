@@ -3,16 +3,18 @@ from django.db import models
 from django.utils import timezone
 from .formatter import RichFormatter
 from pytils import translit
-from tagging.models import Tag
-from tagging.utils import edit_string_for_tags
+from taggit.managers import TaggableManager
 from solo.models import SingletonModel
 from PIL import Image
-from django.utils.translation import ugettext_lazy as _
-import time 
+from django.utils.translation import gettext_lazy as _
+from django.dispatch import receiver
+from django.db.models.signals import pre_delete
+import time
 
 
 class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     url = models.CharField(max_length=200)
     content = models.TextField()
@@ -21,17 +23,7 @@ class Post(models.Model):
     published_date = models.DateTimeField(blank=True, null=True)
     modified_date = models.DateTimeField(default=timezone.now)
     is_starred = models.BooleanField(default=False)
-
-    def tag(self, tags):
-        Tag.objects.update_tags(self, tags)
-        return self
-
-    def getTags(self, asString=False):
-        post_tags = Tag.objects.get_for_object(self)
-        if(asString):
-            return edit_string_for_tags(post_tags)
-        else:
-            return post_tags
+    tags = TaggableManager()
 
     def getOrNone(**kwargs):
         try:
@@ -42,7 +34,7 @@ class Post(models.Model):
     def process(self):
         if(not self.published_date):
             self.url = translit.slugify(self.title)
-        
+
         # Avoid dupes
 
         while Post.getOrNone(url=self.url):
@@ -57,20 +49,29 @@ class Post(models.Model):
         self.save()
 
     def toggleStar(self):
-        self.is_starred = not self.is_starred;
+        self.is_starred = not self.is_starred
         self.save()
 
-    def __str__(self):
-        return self.title
+
+@receiver(pre_delete, sender=Post)
+def remove_tags_when_last_post_deleted(sender, instance, **kwargs):
+    for tag in instance.tags.all():
+        # Check if the tag is associated with only this post
+        if tag.taggit_taggeditem_items.count() == 1:
+            # If it's the last post with this tag, delete the tag
+            tag.delete()
+
+
+def __str__(self):
+    return self.title
 
 
 class SiteSettings(SingletonModel):
     title = models.CharField(max_length=256, default=_("My new blog"))
     description = models.CharField(max_length=256, blank=True)
     author = models.CharField(max_length=256, default=_("Me"))
-    
-    avatar = models.ImageField(upload_to = 'meta/', default = 'meta/no-avatar.png')
-    cover = models.ImageField(upload_to = 'meta/', default = 'meta/no-cover.jpg')
+
+    avatar = models.ImageField(upload_to='meta/', default='meta/no-avatar.png')
 
     social_instagram = models.CharField(max_length=256, blank=True)
     social_twitter = models.CharField(max_length=256, blank=True)
@@ -79,7 +80,6 @@ class SiteSettings(SingletonModel):
     social_vk = models.CharField(max_length=256, blank=True)
     social_telegram = models.CharField(max_length=256, blank=True)
     social_email = models.CharField(max_length=256, blank=True)
- 
 
     def crop_avatar(self):
         img = Image.open(self.avatar.path)

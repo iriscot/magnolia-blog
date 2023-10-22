@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
-{% load tagging_tags %}
 {% load i18n %}
+{% load custom_filters %}
 
 
 {% block title %}{% trans "Tags" %}{% endblock title %}
@@ -10,14 +10,28 @@
 	{% include "blog/top_menu.html" %}
 
 
-{% tag_cloud_for_model blog.Post as tags with steps=3 min_count=1 distribution=log %}
-
 <h1 class="ui-header">{% trans "Tags" %}</h1>
 
 <div class="u-window-box-xlarge u-centered">
-	{% for tag in tags %}
-		<a href="{% url 'tagged_posts' tag=tag.name %}" style="font-size: {{ tag.font_size }}em">{{ tag.name }}</a>
-	{% endfor %}
+{% with min_font_size=10 max_font_size=24 font_size_base=10 font_size_increment=5 %}
+    {% for tag in tags %}
+        {% if tag.slug %}
+            {% with font_size=tag.num_posts|multiply:font_size_increment|add:font_size_base %}
+                {% with font_size=font_size|default:min_font_size|add:0 %}
+                    {% with font_size=font_size|default:max_font_size|add:0 %}
+                        {% with font_size=font_size|add:0|slice:"-2:"|add:font_size %}
+                            <a href="{% url 'tagged_posts' tag_slug=tag.slug %}" style="font-size: {{ font_size }}px;">
+                                {{ tag.name }}
+                            </a>
+                        {% endwith %}
+                    {% endwith %}
+                {% endwith %}
+            {% endwith %}
+        {% endif %}
+    {% empty %}
+        <p>No tags available.</p>
+    {% endfor %}
+{% endwith %}
 </div>
 
 

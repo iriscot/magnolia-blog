@@ -17,7 +17,7 @@ Magnolia is a Django-based blogging engine
 - Social contacts
 - Pagination
 
-# Running 
+# Running
 
 Warning: the following guide is not suitable for production deployment.
 
@@ -37,7 +37,7 @@ $ source blog_env/bin/activate
 
 3. Install dependencies:
 ```
-$ python3 -m pip install requirements.txt
+$ python3 -m pip install -r requirements.txt
 ```
 
 4. Set your database in `settings.py`.

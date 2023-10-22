@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+import django
+from django.utils.encoding import smart_str
+django.utils.encoding.smart_text = smart_str
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -40,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'tagging',
+    'taggit',
     'solo',
     'PIL',
 ]
@@ -143,3 +145,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 POSTS_PER_PAGE = 20
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+TAGGIT_CASE_INSENSITIVE = True
