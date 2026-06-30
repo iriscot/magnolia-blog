@@ -11,7 +11,7 @@
 	{% include "blog/top_menu.html" %}
 
 {% if not title == conf.title %}
-<h1 class="ui-header">{{title|safe}}</h1>
+<h1 class="ui-header">{{ title }}</h1>
 {% endif %}
 
 {% if page.has_previous %}

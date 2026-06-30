@@ -21,31 +21,27 @@
 
 </div>
 
-
-<script type="text/javascript" src="{% static '/vendor/@editorjs/editorjs/dist/editor.js' %}"></script>
-<script type="text/javascript" src="{% static '/vendor/@editorjs/header/dist/bundle.js' %}"></script>
-<script type="text/javascript" src="{% static '/vendor/@editorjs/image/dist/bundle.js' %}"></script>
-<script type="text/javascript" src="{% static '/vendor/@editorjs/quote/dist/bundle.js' %}"></script>
-<script type="text/javascript" src="{% static '/vendor/@editorjs/list/dist/bundle.js' %}"></script>
-<script type="text/javascript" src="{% static '/vendor/@editorjs/embed/dist/bundle.js' %}"></script>
-<script type="text/javascript" src="{% static '/vendor/@editorjs/raw/dist/bundle.js' %}"></script>
-<script type="text/javascript" src="{% static '/vendor/@editorjs/checklist/dist/bundle.js' %}"></script>
-<script type="text/javascript" src="{% static '/vendor/@editorjs/delimiter/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/@editorjs/editorjs/dist/editor.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/@editorjs/header/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/@editorjs/image/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/@editorjs/quote/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/@editorjs/list/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/@editorjs/embed/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/@editorjs/raw/dist/bundle.js' %}"></script>
+<script type="text/javascript" src="{% static 'vendor/@editorjs/delimiter/dist/bundle.js' %}"></script>
 
 <script type="text/javascript">
 {% if post %}
   window.editor_source_post = {
-    'id': {{ post.id }},
-    'content': {{ post.content|safe }}
+    id: {{ post.id }},
+    content: JSON.parse('{{ post.content|escapejs }}')
   };
-  {% else %}
+{% else %}
   window.editor_source_post = {};
-  {% endif %}
+{% endif %}
 
 window.addEventListener("DOMContentLoaded", function(){
- 
-  init_editor(editor_source_post);
-
+  init_editor(window.editor_source_post);
 });
-    </script>
+</script>
 {% endblock %}

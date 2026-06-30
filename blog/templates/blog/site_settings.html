@@ -8,6 +8,8 @@
 {% block content %}
 	{% include "blog/top_menu.html" %}
 
+<h1 class="ui-header">{% trans "Settings" %}</h1>
+
 <div class="u-letter-box-large">
 
 	{% if is_saved %}
@@ -29,6 +31,70 @@
 </form>
 </div>
 
+    <h2 class="ui-header">{% trans 'Change Password' %}</h2>
+    <form id="change_password" class="form-aligned" method="post" action="{% url 'password_change' %}">
+        {% csrf_token %}
+	{% for field in password_form %}
+	    <div class="control-group">
+	        {{ field.label_tag }} {{ field }}
+	        {{ field.errors }}
+	    </div>
+	{% endfor %}
+	<div class="form-status"></div>
+	<div class="form-controls">
+        <button class="button button-primary" type="submit">{% trans 'Change Password' %}</button>
+        </div>
+    </form>
 
+<p><a href="/admin">{% trans 'Advanced settings' %}</a></p>
+<form action="{% url 'user_logout' %}" method="post">
+	{% csrf_token %}
+	<button class="button" type="submit">{% trans 'Log out' %}</button>
+</form>
+
+<script>
+const changePasswordForm = document.getElementById('change_password');
+const formStatus = changePasswordForm.querySelector('.form-status');
+
+changePasswordForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(changePasswordForm);
+    formData.append('csrfmiddlewaretoken', document.querySelector('input[name=csrfmiddlewaretoken]').value);
+
+    fetch('/api/password_change', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        // Clear previous messages
+        formStatus.textContent = '';
+        formStatus.classList.remove('error', 'success');
+
+        if (data.success) {
+            // If password change was successful
+            formStatus.classList.add('success');
+            formStatus.textContent = gettext('Password change was successful.');
+            // Clear the form
+            changePasswordForm.reset();
+        } else {
+           // If there are errors, show only the first error message
+            formStatus.classList.add('error');
+            const errors = JSON.parse(data.errors);
+            const firstErrorField = Object.keys(errors)[0];
+            const firstErrorMessage = errors[firstErrorField][0].message;
+            formStatus.textContent = firstErrorMessage;
+        }
+    })
+    .catch(error => {
+        // Handle network or other fetch related errors
+        console.error('Error:', error);
+        formStatus.classList.add('error');
+        formStatus.textContent = gettext('An error occurred. Please try again later.');
+    });
+});
+
+</script>
 
 {% endblock %}

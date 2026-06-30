@@ -1,0 +1,30 @@
+{
+  "name": "magnolia-blog",
+  "version": "1.0.0",
+  "description": "Magnolia is a Django-based blogging engine",
+  "private": true,
+  "scripts": {
+    "build-css": "sass static/styles/sass/core.scss static/styles/core.css --style=compressed",
+    "watch-css": "sass --watch static/styles/sass/core.scss:static/styles/core.css",
+    "build-vendor": "node scripts/build_editorjs_vendor.js",
+    "build-static": "npm run build-vendor && npm run build-css",
+    "postinstall": "node scripts/build_editorjs_vendor.js --optional"
+  },
+  "dependencies": {
+    "@editorjs/delimiter": "^1.4.2",
+    "@editorjs/editorjs": "^2.31.6",
+    "@editorjs/embed": "^2.8.0",
+    "@editorjs/header": "^2.8.9",
+    "@editorjs/image": "^2.10.3",
+    "@editorjs/list": "^2.0.9",
+    "@editorjs/quote": "^2.7.6",
+    "@editorjs/raw": "^2.5.1"
+  },
+  "devDependencies": {
+    "sass": "^1.101.0"
+  },
+  "engines": {
+    "node": ">=18.18.0",
+    "npm": ">=9.0.0"
+  }
+}

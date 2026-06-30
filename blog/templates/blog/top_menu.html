@@ -6,7 +6,6 @@
                   {% if user.is_authenticated %}<a href="{% url 'posts_list_drafts' %}">{% trans "Drafts" %}</a>{% endif %}
                   <a href="{% url 'tags_list' %}">{% trans "Tags" %}</a>
                   <a href="{% url 'posts_list_featured' %}">{% trans "Featured" %}</a>
-                  <a href="{% url 'rss_posts' %}">RSS</a>
                 </nav>
                 <div class="top-search">
                   <div class="search-box">

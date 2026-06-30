@@ -1,7 +1,7 @@
 from django import forms
 
 from .models import SiteSettings, Post
-
+from taggit.forms import TagField
 from django.utils.translation import gettext_lazy as _
 
 
@@ -26,13 +26,16 @@ class SiteSettingsForm(forms.ModelForm):
             "social_email": _("E-Mail"),
         }
 
+        title = forms.CharField(required=True)
+        author = forms.CharField(required=True)
+
 
 class UploadHeaderImageForm(forms.Form):
     image = forms.ImageField()
-    image_type = forms.CharField(max_length=10)
 
 
 class PostEditorForm(forms.ModelForm):
+    tags = TagField(required=False)
 
     class Meta:
         model = Post

@@ -1,6 +1,8 @@
-Django
-pytils
-django-tagging
-django-solo
-Pillow
-yattag
+Django==6.0.6
+Pillow==12.2.0
+bleach==6.4.0
+django-solo==2.5.1
+django-taggit==6.1.0
+pytils==0.4.4
+requests==2.34.2
+yattag==1.16.1

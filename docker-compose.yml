@@ -1,0 +1,61 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: magnolia-blog:local
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    environment:
+      DJANGO_DEBUG: "${DJANGO_DEBUG:-True}"
+      DJANGO_SECRET_KEY: "${DJANGO_SECRET_KEY:-django-insecure-local-docker-only-change-me}"
+      DJANGO_ALLOWED_HOSTS: "${DJANGO_ALLOWED_HOSTS:-localhost,127.0.0.1,0.0.0.0,[::1]}"
+      DJANGO_CSRF_TRUSTED_ORIGINS: "${DJANGO_CSRF_TRUSTED_ORIGINS:-http://localhost:8000,http://127.0.0.1:8000}"
+      DJANGO_DB_ENGINE: "django.db.backends.sqlite3"
+      DJANGO_DB_NAME: "/app/data/db.sqlite3"
+      DJANGO_TIME_ZONE: "${DJANGO_TIME_ZONE:-Europe/Moscow}"
+      POSTS_PER_PAGE: "${POSTS_PER_PAGE:-20}"
+      MAX_UPLOAD_SIZE: "${MAX_UPLOAD_SIZE:-5242880}"
+      MAX_REMOTE_IMAGE_SIZE: "${MAX_REMOTE_IMAGE_SIZE:-5242880}"
+      REMOTE_IMAGE_TIMEOUT: "${REMOTE_IMAGE_TIMEOUT:-5}"
+      DJANGO_SESSION_COOKIE_SECURE: "False"
+      DJANGO_CSRF_COOKIE_SECURE: "False"
+      DJANGO_SECURE_SSL_REDIRECT: "False"
+      DJANGO_SUPERUSER_USERNAME: "${DJANGO_SUPERUSER_USERNAME:-admin}"
+      DJANGO_SUPERUSER_EMAIL: "${DJANGO_SUPERUSER_EMAIL:-admin@example.local}"
+      DJANGO_SUPERUSER_PASSWORD: "${DJANGO_SUPERUSER_PASSWORD:-admin12345}"
+    volumes:
+      - magnolia_sqlite:/app/data
+      - magnolia_media:/app/media
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "python - <<'PY'\nimport urllib.request\nurllib.request.urlopen('http://127.0.0.1:8000/', timeout=5).read(1)\nPY"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: magnolia-blog:local
+    profiles: ["test"]
+    command: sh -c "python manage.py check && python manage.py test -v 2"
+    environment:
+      DJANGO_DEBUG: "True"
+      DJANGO_SECRET_KEY: "django-insecure-local-test-only-change-me"
+      DJANGO_ALLOWED_HOSTS: "localhost,127.0.0.1,0.0.0.0,[::1]"
+      DJANGO_DB_ENGINE: "django.db.backends.sqlite3"
+      DJANGO_DB_NAME: "/app/data/test.sqlite3"
+      DJANGO_SESSION_COOKIE_SECURE: "False"
+      DJANGO_CSRF_COOKIE_SECURE: "False"
+      DJANGO_SECURE_SSL_REDIRECT: "False"
+    volumes:
+      - magnolia_test_sqlite:/app/data
+
+volumes:
+  magnolia_sqlite:
+  magnolia_media:
+  magnolia_test_sqlite:

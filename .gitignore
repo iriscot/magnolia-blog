@@ -1,25 +1,25 @@
-# Environments
+# Local environment / secrets
 .env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+.env.*
+!.env.example
+!.env.local.example
 
-# Byte-compiled / optimized / DLL files
+# Python virtualenvs
+.venv/
+venv/
+env/
+ENV/
+blog_env/
+
+# Python cache / build artifacts
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C extensions
 *.so
-
-# Distribution / packaging
 .Python
 build/
-develop-eggs/
 dist/
+develop-eggs/
 downloads/
 eggs/
 .eggs/
@@ -34,11 +34,33 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
 
-**/.DS_Store
-
+# Django runtime files
 db.sqlite3
+db.sqlite3-journal
+static_root/
+media/
 
-blog_env/
-media/*
-!/media/meta/no-avatar.png
+# Frontend dependencies / generated vendor bundles
+node_modules/
+static/vendor/
+static/styles/*.map
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
